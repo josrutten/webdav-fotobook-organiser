@@ -1,0 +1,5 @@
+.gradle/
+out
+webdav-fotobook-organiser.iml
+.idea/
+build/
