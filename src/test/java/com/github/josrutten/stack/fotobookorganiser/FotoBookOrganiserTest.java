@@ -102,37 +102,4 @@ public class FotoBookOrganiserTest {
         }
         return davResource;
     }
-
-
-    /*
-    private void moveFile(LocalDate date, DavResource file) throws IOException {
-        File parentAsFile = new File(file.getHref().toString()).getParentFile();
-
-        String monthSubFolder = date.format(DateTimeFormatter.ofPattern("MMMM%20yyyy", new Locale("nl", "NL")));
-        String daySubFolder = date.format(DateTimeFormatter.ISO_DATE);
-        String newInbetweenFolder = parentAsFile.getCanonicalPath() + "/" + monthSubFolder;
-        String newFolder = newInbetweenFolder + "/" + daySubFolder;
-
-        if (!sardine.exists(stackBaseUrl +  newInbetweenFolder)) {
-            sardine.createDirectory(stackBaseUrl +  newInbetweenFolder);
-        }
-        if (!sardine.exists(stackBaseUrl +  newFolder)) {
-            sardine.createDirectory(stackBaseUrl +  newFolder);
-        }
-        moveFile(file, newFolder);
-    }
-
-    private void moveFile(DavResource file, String newFolder) throws IOException {
-        String oldUrl = stackBaseUrl + file.getHref();
-        String newUrl = stackBaseUrl + newFolder + '/' + new File(file.getHref().toString()).getName();
-
-        System.out.println("moving from : " + oldUrl + " to " + newUrl);
-        try {
-            sardine.move(oldUrl, newUrl);
-        } catch (IOException ioe) {
-            System.err.println("failed for " +  file.getName() + " - SKIPPING - message: " + ioe.getMessage());
-        }
-    }
-
-     */
 }
